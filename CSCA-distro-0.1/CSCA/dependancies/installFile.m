@@ -131,7 +131,7 @@ function [] = installFile(filename,directory,graphicsYes)
 
     
     % Rewrite the target file and close it.
-    fid=fopen(filename,'wt');
+    fid=fopen([directory,filename],'wt');
     fprintf(fid,newfile);
     fclose(fid);
     
