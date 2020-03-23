@@ -29,12 +29,8 @@ function [] = installNLSL(directory,graphicsYes)
     %  on each, in order to comment out offensive lines of code. 
     files=dir(directory);
     
-    if directory(end)~='/'
-       directory=strcat(directory,'/');
-    end
-    
     for i=3:length(files)
-        installFile([directory,files(i).name],graphicsYes);
+        installFile(files(i).name,directory,graphicsYes);
         disp(files(i).name);
     end
 

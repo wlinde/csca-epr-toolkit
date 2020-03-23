@@ -1,8 +1,14 @@
-function [] = installFile(filename,graphicsYes)
+function [] = installFile(filename,directory,graphicsYes)
 %% This function modifies a default NLSL.MOMD file to compile properly without graphics
 
     % Read a given file; Make a new string to house the modified output.
-    text=fileread(filename);
+    
+    
+    if directory(end)~='/'
+       directory=strcat(directory,'/');
+    end
+    
+    text=fileread([directory,filename]);
     newfile='';
     
     % The original scripts used some percentage signs and backslashes
